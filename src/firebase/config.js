@@ -15,7 +15,9 @@ const firebaseConfig = {
 //firebase init
 firebase.initializeApp(firebaseConfig);
 
-//init service
+//DB서비스
 const firedb = firebase.firestore();
+//로그인 인증
+const fireauth = firebase.auth();
 //데이터 베이스에 fire 베이스를  firestor 를 가져와서 사용할 수 있게 가져 왔다
-export { firedb };
+export { firedb, fireauth };
