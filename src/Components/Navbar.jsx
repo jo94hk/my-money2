@@ -24,6 +24,7 @@ function Navbar() {
         )}
         {user && (
           <li>
+            <li>안녕하세요,{user.displayName}</li>
             <button className="btn" onClick={logout}>
               로그아웃
             </button>
