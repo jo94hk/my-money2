@@ -3,10 +3,9 @@ import styles from "./Navbar.module.css";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-export default function Navbar() {
+function Navbar() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
-
   return (
     <nav className={styles.navbar}>
       <ul>
@@ -23,7 +22,7 @@ export default function Navbar() {
             </li>
           </>
         )}
-        {!user && (
+        {user && (
           <li>
             <button className="btn" onClick={logout}>
               로그아웃
@@ -34,3 +33,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar;
