@@ -26,7 +26,7 @@ function Login() {
       <label>
         <span>passowrd:</span>
         <input
-          type="passowrd"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={passowrd}
         />
