@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useFirestore } from "../hooks/useFirestore";
+import { useFirestore } from "../../hooks/useFirestore";
 
-export default function TransactionForm(uid) {
+export default function TransactionForm({ uid }) {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
-  const { addDocument, response } = useFirestore("transactions"); //트래잭션에 데이터 저장(파이엉스토어에서 새로 문서추가 가져오기)
-  //클라우드 파이어스토어는 문서형 DB로 테이블 저해지지 않고 객체형식으로 입력함.
+  const { addDocument, response } = useFirestore("transactions"); //트랜잭션에 데이터 저장
+
+  //클라우드 파이어스토어는 문서형 DB로 테이블이 정해지지 않고 객체형식으로 입력함.
   const handleSubmit = (e) => {
     e.preventDefault();
     addDocument({

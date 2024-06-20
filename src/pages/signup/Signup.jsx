@@ -4,19 +4,18 @@ import { useSignup } from "../../hooks/useSignup";
 
 function Signup() {
   const { signup, error, isPending } = useSignup();
-  const [name, setName] = useState(""); // name 상태 추가
+
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [passowrd, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email, password, name); // name 출력 추가 (순서가 바껴도 틀림 가입이 안됨)
+    signup(email, passowrd, name);
   };
-
   return (
     <form onSubmit={handleSubmit} className={styles["signup-form"]}>
       <h2>Signup</h2>
-
       <label>
         <span>email:</span>
         <input
@@ -27,11 +26,11 @@ function Signup() {
       </label>
 
       <label>
-        <span>password:</span>
+        <span>passowrd:</span>
         <input
-          type="password"
+          type="passowrd"
           onChange={(e) => setPassword(e.target.value)}
-          value={password}
+          value={passowrd}
         />
       </label>
 

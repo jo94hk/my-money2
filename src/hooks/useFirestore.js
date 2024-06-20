@@ -5,7 +5,6 @@ let initalState = {
   document: null,
   isPending: false,
   error: null,
-
   success: false,
 };
 
@@ -51,8 +50,8 @@ export const useFirestore = (collection) => {
     dispatch({ type: "IS_PENDING" });
 
     try {
-      const createdAt = timestamp.fromDate(new Date()); //현재날짜시간으로 날짜데이터 만들기
-      const addedDocument = await ref.add({ ...doc, createdAt }); //날짜시간과 함께 저장하기
+      const createdAt = timestamp.fromDate(new Date()); //현재 날짜로 데이터 만들기
+      const addedDocument = await ref.add({ ...doc, createdAt });
       dispatchIfNotCancelled({
         type: "ADDED_DOCUMENT",
         payload: addedDocument,
