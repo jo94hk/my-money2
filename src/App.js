@@ -9,7 +9,7 @@ function App() {
   const { authIsReady, user } = useAuthContext();
   return (
     <div className="App">
-      {/* authIsReady 가 참일때만 보여 주겠다  */}
+      {/* authIsReady 가 참일때만 보여 준다 */}
       {authIsReady && (
         <BrowserRouter>
           <Navbar />
